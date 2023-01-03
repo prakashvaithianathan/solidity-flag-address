@@ -14,14 +14,14 @@ contract CheckFlag {
         num = 0;
     }
 
-    //This function is used to set the flag/address using message sender method.
-    function setFlagAsParams() public returns (address) {
+    //This function is used to set the flag/address using message sender method. Whenever this function is called, num value could be incremented by 1.
+    function setFlagAsMsgSender() public returns (address) {
         num++;
         flagDetails[num] = msg.sender;
         return flagDetails[num];
     }
 
-    //This function is used to set the flag/address using passing params into the function.
+    //This function is used to set the flag/address using passing params into the function. Whenever this function is called, num value could be incremented by 1.
     function setFlagAsParams(address flagAddress) public returns (address) {
         num++;
         flagDetails[num] = flagAddress;
